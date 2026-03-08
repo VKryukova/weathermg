@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Температура</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="head"><span>Шо там где?</span></div>
+      <div class="blocks">
+        <div class="card">
+          <div class="cityName">Видное</div>
+          <div class="temperature"><p id="Vidnoye"></p></div>
+        </div>
+        <div class="card">
+          <div class="cityName">Москва</div>
+          <div class="temperature"><p id="Moscow"></p></div>
+        </div>
+        <div class="card">
+          <div class="cityName">Гомель</div>
+          <div class="temperature"><p id="Gomel"></p></div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function weather() {
+        const url =
+          "https://api.weatherapi.com/v1/current.json?key=53c082a7085540a98e6200508242709&q=";
+        const cities = ["Vidnoye", "Moscow", "Gomel"];
+        const urls = cities.map((city) => url + city);
+        urls.forEach((url, index) => {
+          fetch(url)
+            .then((response) => response.json())
+            .then((data) => {
+              const idCity = cities[index];
+              updateTemp(idCity, data);
+            })
+            .catch((error) => {
+              console.error(error.message);
+            });
+        });
+      }
+
+      function updateTemp(idCity, data) {
+        const temp = document.getElementById(idCity);
+        temp.innerHTML = Math.floor(data.current.temp_c) + "°C";
+      }
+
+      weather();
+    </script>
+  </body>
+</html>
+
+

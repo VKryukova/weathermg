@@ -1,0 +1,124 @@
+body {
+    margin: 0;
+    background-image: url("./img/map1.jpg");
+    background-repeat: no-repeat;
+    background-color: #e0e0e0;
+    font-family: "Merriweather", serif;
+    font-style: normal;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 8% 30%; 
+}
+
+.head {  
+    height: 1em;
+    border-radius: 0.5em;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 20px 20px 100px rgba(247, 247, 247, 0.85),
+                -20px -20px 100px rgba(255, 255, 255, 0.5);
+    text-align: center;
+    padding: 2% 2% 3% 2%;
+    font-size: 2.5em;
+    
+}
+
+.blocks {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 3%;
+}
+
+.card {
+    width: 30%;
+    height: 50%;
+    border-radius: 2em;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 20px 20px 100px rgba(247, 247, 247, 0.85),
+                -20px -20px 100px rgba(255, 255, 255, 0.5);
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: 600;
+    padding-top: 5%;
+}
+
+.temperature {
+    font-size: 2em; 
+    padding: 5% 0 10% 0;
+}
+
+@media (max-width: 1200px) {
+    .head {
+        font-size: 2.3em;
+    }
+    .card {
+        font-size: 1em;
+    }
+}
+@media (max-width: 1000px) {
+    .head {
+        font-size: 2em;
+    }
+}
+@media (max-width: 800px) {
+    .head {
+        font-size: 1.5em;
+    }
+    .card {
+        font-size: 0.7em;
+    }
+}
+@media (max-width: 600px) {
+    .blocks {
+        flex-direction: column;
+        justify-content: space-between;
+        height: 83vh;
+        padding-top: 0;
+    }
+    .head {
+        font-size: 1.05em;
+        font-weight: 700;
+    }
+    .card {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 8% 0 8%;
+        font-size: 1.2em;
+        width: 85%;
+        height: 13%;
+        border-radius: 1.5em;
+    }
+    .temperature {
+        font-size: 2em; 
+        padding: 0;
+        float: right;
+    }
+    
+    .container {
+        height: 90vh;
+        padding: 4% 10%; 
+    }
+}
+
+@media (max-width: 420px) {
+    .head {
+        font-size: 0.7em;
+    }
+    .card {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 370px) {
+    .head {
+        font-size: 0.3em;
+    }
+    .card {
+        text-align: left;
+    }
+}
