@@ -73,14 +73,15 @@ body {
 }
 @media (max-width: 600px) {
     .blocks {
+        display: flex;
+        justify-content: flex-start;
         flex-direction: column;
-        justify-content: space-between;
         height: 83vh;
         padding-top: 0;
     }
     .head {
-        font-size: 1.05em;
         font-weight: 700;
+        border-radius: 1em;
     }
     .card {
         display: flex;
@@ -92,6 +93,7 @@ body {
         width: 85%;
         height: 13%;
         border-radius: 1.5em;
+        margin: 4% 0%;
     }
     .temperature {
         font-size: 2em; 
@@ -111,7 +113,7 @@ body {
     justify-content: flex-start;
 }
     .head {
-        font-size: 0.7em;
+        font-size: 1.5em;
     }
     .card {
         font-size: 1em;
@@ -121,7 +123,7 @@ body {
 
 @media (max-width: 370px) {
     .head {
-        font-size: 0.3em;
+        font-size: 1.5em;
     }
     .card {
         text-align: left;
