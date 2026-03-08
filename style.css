@@ -106,11 +106,16 @@ body {
 }
 
 @media (max-width: 420px) {
+    .blocks {
+    display: flex;
+    justify-content: flex-start;
+}
     .head {
         font-size: 0.7em;
     }
     .card {
         font-size: 1em;
+        margin: 4% 0%;
     }
 }
 
